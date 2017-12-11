@@ -2,10 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
 using System.Collections.Generic;
-using CatsApp.Data;
 using CatsApp.Model;
-using CatsApp.Repository;
-using System.Linq;
 using CatsApp.Service;
 using CatsApp.Dto;
 using CatsApp.ConsoleApp;
