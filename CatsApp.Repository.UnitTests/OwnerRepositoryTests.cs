@@ -7,10 +7,10 @@ using CatsApp.Model;
 using CatsApp.Repository;
 using System.Linq;
 
-namespace CatsApp.Repository.Tests
+namespace CatsApp.UnitTests
 {
     [TestClass]
-    public class IOwnerRepositoryTests
+    public class OwnerRepositoryTests
     {
         private IDataContext _dataContext;
         private OwnerRepository ownerRepository;

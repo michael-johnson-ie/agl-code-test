@@ -20,8 +20,12 @@ namespace CatsApp.ConsoleApp
             var gender = genders[i];
 
             Console.WriteLine(gender.Title);
-            OutputPets(gender.Pets.ToList());
-            i++;
+
+            if (gender.Pets?.Any() == true)
+            {
+                OutputPets(gender.Pets.ToList());
+                i++;
+            }
 
             if (genders.Count > i) OutputGenders(genders, i);
         }
@@ -36,9 +40,12 @@ namespace CatsApp.ConsoleApp
 
         public void Run()
         {
-            var genders = _ownerService.GetGendersWithCats().ToList();
+            var genders = _ownerService.GetGendersForPetType(Model.PetType.Cat).ToList();
 
-            OutputGenders(genders);
+            if (genders.Any())
+            {
+                OutputGenders(genders);
+            }
         }
     }
 }

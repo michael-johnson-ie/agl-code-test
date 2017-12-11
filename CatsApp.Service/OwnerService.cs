@@ -15,12 +15,12 @@ namespace CatsApp.Service
             _ownerRepository = ownerRepository;
         }
 
-        public IEnumerable<GenderDto> GetGendersWithCats()
+        public IEnumerable<GenderDto> GetGendersForPetType(PetType petType)
         {
             var owners = _ownerRepository.GetOwners();
-            var petType = PetType.Cat;
 
             return owners.
+                Where(o => o.Pets?.Any(p => p.Type == petType) == true).
                 GroupBy(o => o.Gender, o => o.Pets,
                     (g, p) => new GenderDto
                     {
