@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
@@ -36,6 +34,5 @@ namespace CatsApp.Data
             var client = new HttpClient();
             return await client.GetAsync("http://agl-developer-test.azurewebsites.net/people.json");
         }
-
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CatsApp.Data;
 using StructureMap;
 
 namespace CatsApp.ConsoleApp
@@ -12,11 +13,12 @@ namespace CatsApp.ConsoleApp
             Scan(scan =>
             {
                 scan.LookForRegistries();
-                scan.Assembly("CatsApp.Service");
-                scan.Assembly("CatsApp.Repository");
                 scan.Assembly("CatsApp.Data");
+                scan.Assembly("CatsApp.Repository");
+                scan.Assembly("CatsApp.Service");
                 scan.WithDefaultConventions();
             });
+            For<IDataContext>().Use<JsonDataContext>();
         }
     }
 }
