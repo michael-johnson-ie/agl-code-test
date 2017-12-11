@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using CatsApp.Dto;
-using CatsApp.Service;
 using StructureMap;
 
 namespace CatsApp.ConsoleApp
