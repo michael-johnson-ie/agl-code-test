@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CatsApp.Dto\CatsApp.Dto.csproj" />
+    <ProjectReference Include="..\CatsApp.Model\CatsApp.Model.csproj" />
+    <ProjectReference Include="..\CatsApp.Repository\CatsApp.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
