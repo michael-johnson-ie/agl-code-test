@@ -8,7 +8,7 @@ namespace CatsApp.Service
 {
     public class OwnerService : IOwnerService
     {
-        private IOwnerRepository _ownerRepository;
+        private readonly IOwnerRepository _ownerRepository;
 
         public OwnerService(IOwnerRepository ownerRepository)
         {

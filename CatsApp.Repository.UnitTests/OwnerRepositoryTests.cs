@@ -20,6 +20,12 @@ namespace CatsApp.UnitTests
         {
             _dataContext = Substitute.For<IDataContext>();
             ownerRepository = new OwnerRepository(_dataContext);
+        }
+
+        [TestMethod]
+        public void GetOwners_ReturnsOwners()
+        {
+            Setup();
 
             _owners = new List<Owner>
             {
@@ -29,16 +35,22 @@ namespace CatsApp.UnitTests
             };
 
             _dataContext.Get<Owner>().Returns(_owners);
+
+            var owners = ownerRepository.GetOwners();
+
+            Assert.AreEqual(3, owners.Count());
+            Assert.AreEqual(owners, _owners);
+            _dataContext.Received(1).Get<Owner>();
         }
 
         [TestMethod]
-        public void GetOwners_ReturnsOwners()
+        public void GetOwners_WithNoResults_ReturnsEmptyOwners()
         {
             Setup();
 
             var owners = ownerRepository.GetOwners();
 
-            Assert.AreEqual(3, owners.Count());
+            Assert.AreEqual(0, owners.Count());
             _dataContext.Received(1).Get<Owner>();
         }
     }

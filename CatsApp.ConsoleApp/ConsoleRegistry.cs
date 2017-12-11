@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using CatsApp.Data;
 using StructureMap;
@@ -19,6 +20,7 @@ namespace CatsApp.ConsoleApp
                 scan.WithDefaultConventions();
             });
             For<IDataContext>().Use<JsonDataContext>();
+            For<HttpMessageHandler>().Use<HttpClientHandler>();
         }
     }
 }

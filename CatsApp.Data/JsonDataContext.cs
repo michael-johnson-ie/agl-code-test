@@ -7,6 +7,13 @@ namespace CatsApp.Data
 {
     public class JsonDataContext : IDataContext
     {
+        public readonly HttpClient _httpClient;
+
+        public JsonDataContext(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
+
         public IEnumerable<T> Get<T>()
         {
             return GetData<T>();
@@ -31,8 +38,7 @@ namespace CatsApp.Data
 
         private async Task<HttpResponseMessage> GetClient()
         {
-            var client = new HttpClient();
-            return await client.GetAsync("http://agl-developer-test.azurewebsites.net/people.json");
+            return await _httpClient.GetAsync("http://agl-developer-test.azurewebsites.net/people.json");
         }
     }
 }

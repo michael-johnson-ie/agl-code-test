@@ -31,14 +31,18 @@ namespace CatsApp.UnitTests
             {
                 new Owner { Name = "AAA", Age = 30, Gender = Gender.Female, Pets = new List<Pet> { new Pet { Name = "AAA_Pet", Type = PetType.Cat } } },
                 new Owner { Name = "BBB", Age = 40, Gender = Gender.Male, Pets = new List<Pet> { new Pet { Name = "BBB_Pet", Type = PetType.Cat } } },
-                new Owner { Name = "CCC", Age = 50, Gender = Gender.Female, Pets = new List<Pet> { new Pet { Name = "CCC_Pet", Type = PetType.Dog } } }
+                new Owner { Name = "CCC", Age = 50, Gender = Gender.Female, Pets = new List<Pet> { new Pet { Name = "CCC_Pet", Type = PetType.Dog }, new Pet { Name = "CCC_Pet2", Type = PetType.Cat } } }
             };
 
             _ownerRepository.GetOwners().Returns(_owners);
 
-            var genders = _ownerService.GetGendersForPetType(PetType.Cat);
+            var genders = _ownerService.GetGendersForPetType(PetType.Cat).ToList();
 
             Assert.AreEqual(2, genders.Count());
+            Assert.AreEqual("Female", genders[0].Title);
+            Assert.AreEqual(2, genders[0].Pets.Count());
+            Assert.AreEqual("Male", genders[1].Title);
+            Assert.AreEqual(1, genders[1].Pets.Count());
             _ownerRepository.Received(1).GetOwners();
         }
 
@@ -79,6 +83,7 @@ namespace CatsApp.UnitTests
             var genders = _ownerService.GetGendersForPetType(PetType.Cat);
 
             Assert.AreEqual(1, genders.Count());
+            Assert.AreEqual("Male", genders.First().Title);
             Assert.AreEqual(4, genders.ToList()[0].Pets.Count());
             _ownerRepository.Received(1).GetOwners();
         }
@@ -100,7 +105,7 @@ namespace CatsApp.UnitTests
             var genders = _ownerService.GetGendersForPetType(PetType.Cat);
 
             Assert.AreEqual(1, genders.Count());
-            Assert.AreEqual(genders.ToList()[0].Title, "Male");
+            Assert.AreEqual("Male", genders.ToList().First().Title);
             _ownerRepository.Received(1).GetOwners();
         }
     }

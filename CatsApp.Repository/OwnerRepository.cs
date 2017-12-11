@@ -7,7 +7,7 @@ namespace CatsApp.Repository
 {
     public class OwnerRepository : IOwnerRepository
     {
-        private IDataContext _dataContext;
+        private readonly IDataContext _dataContext;
 
         public OwnerRepository(IDataContext dataContext)
         {
