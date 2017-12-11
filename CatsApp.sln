@@ -9,15 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatsApp.Service", "CatsApp.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatsApp.Repository", "CatsApp.Repository\CatsApp.Repository.csproj", "{3B7A044C-9AA7-4DEB-A6E4-55F2773EC510}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7F5FA1D8-005C-457E-AA10-2013CF777541}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatsApp.Dto", "CatsApp.Dto\CatsApp.Dto.csproj", "{A9AEF6B8-5AF0-4A58-8513-B082AD981233}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatsApp.Data", "CatsApp.Data\CatsApp.Data.csproj", "{950C2203-D4F6-4BF0-9CDC-79427A6116F9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatsApp.ConsoleApp", "CatsApp.ConsoleApp\CatsApp.ConsoleApp.csproj", "{A703519C-F5A2-4D1D-B9B4-DEAED2869156}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatsApp.UnitTests", "CatsApp.Repository.UnitTests\CatsApp.UnitTests.csproj", "{2C8FAEA4-788C-40D7-9D56-E866CA4744CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatsApp.UnitTests", "CatsApp.UnitTests\CatsApp.UnitTests.csproj", "{EFF7AA49-757A-40CA-9513-652FBC2C407A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,15 +47,12 @@ Global
 		{A703519C-F5A2-4D1D-B9B4-DEAED2869156}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A703519C-F5A2-4D1D-B9B4-DEAED2869156}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A703519C-F5A2-4D1D-B9B4-DEAED2869156}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C8FAEA4-788C-40D7-9D56-E866CA4744CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C8FAEA4-788C-40D7-9D56-E866CA4744CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C8FAEA4-788C-40D7-9D56-E866CA4744CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C8FAEA4-788C-40D7-9D56-E866CA4744CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFF7AA49-757A-40CA-9513-652FBC2C407A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFF7AA49-757A-40CA-9513-652FBC2C407A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFF7AA49-757A-40CA-9513-652FBC2C407A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFF7AA49-757A-40CA-9513-652FBC2C407A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{2C8FAEA4-788C-40D7-9D56-E866CA4744CF} = {7F5FA1D8-005C-457E-AA10-2013CF777541}
 	EndGlobalSection
 EndGlobal
