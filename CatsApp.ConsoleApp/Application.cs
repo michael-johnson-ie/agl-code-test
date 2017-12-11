@@ -24,8 +24,9 @@ namespace CatsApp.ConsoleApp
             if (gender.Pets?.Any() == true)
             {
                 OutputPets(gender.Pets.ToList());
-                i++;
             }
+
+            i++;
 
             if (genders.Count > i) OutputGenders(genders, i);
         }
