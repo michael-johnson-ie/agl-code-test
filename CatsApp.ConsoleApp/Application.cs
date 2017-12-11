@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CatsApp.Common;
 using CatsApp.Dto;
 using CatsApp.Service;
 
@@ -19,7 +20,7 @@ namespace CatsApp.ConsoleApp
         {
             var gender = genders[i];
 
-            Console.WriteLine(gender.Title);
+            Console.WriteLine(gender.Gender);
 
             if (gender.Pets?.Any() == true)
             {
@@ -41,7 +42,7 @@ namespace CatsApp.ConsoleApp
 
         public void Run()
         {
-            var genders = _ownerService.GetGendersForPetType(Model.PetType.Cat).ToList();
+            var genders = _ownerService.GetGendersForPetType(PetType.Cat).ToList();
 
             if (genders.Any())
             {

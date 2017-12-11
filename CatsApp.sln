@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatsApp.ConsoleApp", "CatsA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatsApp.UnitTests", "CatsApp.UnitTests\CatsApp.UnitTests.csproj", "{EFF7AA49-757A-40CA-9513-652FBC2C407A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatsApp.Common", "CatsApp.Common\CatsApp.Common.csproj", "{891385EB-447A-4F80-A422-37378C0E979F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{EFF7AA49-757A-40CA-9513-652FBC2C407A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFF7AA49-757A-40CA-9513-652FBC2C407A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFF7AA49-757A-40CA-9513-652FBC2C407A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{891385EB-447A-4F80-A422-37378C0E979F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{891385EB-447A-4F80-A422-37378C0E979F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{891385EB-447A-4F80-A422-37378C0E979F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{891385EB-447A-4F80-A422-37378C0E979F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

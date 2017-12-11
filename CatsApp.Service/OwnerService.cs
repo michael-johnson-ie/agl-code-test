@@ -3,6 +3,7 @@ using CatsApp.Dto;
 using System.Linq;
 using CatsApp.Repository;
 using CatsApp.Model;
+using CatsApp.Common;
 
 namespace CatsApp.Service
 {
@@ -24,7 +25,7 @@ namespace CatsApp.Service
                 GroupBy(o => o.Gender, o => o.Pets,
                     (g, p) => new GenderDto
                     {
-                        Title = g.ToString(),
+                        Gender = g,
                         Pets = BuildPetsDto(
                             p.Where(x=> x != null).
                             SelectMany(x => x).

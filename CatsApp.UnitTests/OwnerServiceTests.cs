@@ -5,6 +5,7 @@ using CatsApp.Model;
 using CatsApp.Repository;
 using System.Linq;
 using CatsApp.Service;
+using CatsApp.Common;
 
 namespace CatsApp.UnitTests
 {
@@ -37,9 +38,9 @@ namespace CatsApp.UnitTests
             var genders = _ownerService.GetGendersForPetType(PetType.Cat).ToList();
 
             Assert.AreEqual(2, genders.Count());
-            Assert.AreEqual("Female", genders[0].Title);
+            Assert.AreEqual(Gender.Female, genders[0].Gender);
             Assert.AreEqual(2, genders[0].Pets.Count());
-            Assert.AreEqual("Male", genders[1].Title);
+            Assert.AreEqual(Gender.Male, genders[1].Gender);
             Assert.AreEqual(1, genders[1].Pets.Count());
             _ownerRepository.Received(1).GetOwners();
         }
@@ -81,7 +82,7 @@ namespace CatsApp.UnitTests
             var genders = _ownerService.GetGendersForPetType(PetType.Cat);
 
             Assert.AreEqual(1, genders.Count());
-            Assert.AreEqual("Male", genders.First().Title);
+            Assert.AreEqual(Gender.Male, genders.First().Gender);
             Assert.AreEqual(4, genders.ToList()[0].Pets.Count());
             _ownerRepository.Received(1).GetOwners();
         }
@@ -103,7 +104,7 @@ namespace CatsApp.UnitTests
             var genders = _ownerService.GetGendersForPetType(PetType.Cat);
 
             Assert.AreEqual(1, genders.Count());
-            Assert.AreEqual("Male", genders.ToList().First().Title);
+            Assert.AreEqual(Gender.Male, genders.ToList().First().Gender);
             _ownerRepository.Received(1).GetOwners();
         }
     }

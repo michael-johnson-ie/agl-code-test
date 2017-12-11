@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using CatsApp.Common;
 using CatsApp.Dto;
 using CatsApp.Model;
 

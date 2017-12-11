@@ -1,4 +1,5 @@
 ﻿using System;
+using CatsApp.Common;
 
 namespace CatsApp.Model
 {

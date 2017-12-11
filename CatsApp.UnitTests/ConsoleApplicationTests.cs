@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
 using System.Collections.Generic;
 using CatsApp.Model;
+using CatsApp.Common;
 using CatsApp.Service;
 using CatsApp.Dto;
 using CatsApp.ConsoleApp;
@@ -29,8 +30,8 @@ namespace CatsApp.UnitTests
 
             var genders = new List<GenderDto>
             {
-                new GenderDto { Title = "Male", Pets = new List<PetDto> { new PetDto { Name = "AAA" }, new PetDto { Name = "BBB" } } },
-                new GenderDto { Title = "Female", Pets = new List<PetDto> { new PetDto { Name = "CCC" }, new PetDto { Name = "DDD" } } }
+                new GenderDto { Gender = Gender.Male, Pets = new List<PetDto> { new PetDto { Name = "AAA" }, new PetDto { Name = "BBB" } } },
+                new GenderDto { Gender = Gender.Female, Pets = new List<PetDto> { new PetDto { Name = "CCC" }, new PetDto { Name = "DDD" } } }
             };
 
             _ownerService.GetGendersForPetType(PetType.Cat).Returns(genders);
@@ -75,8 +76,8 @@ namespace CatsApp.UnitTests
 
             var genders = new List<GenderDto>
             {
-                new GenderDto { Title = "Male" },
-                new GenderDto { Title = "Female", Pets = new List<PetDto> { new PetDto { Name = "CCC" } } }
+                new GenderDto { Gender = Gender.Male },
+                new GenderDto { Gender = Gender.Female, Pets = new List<PetDto> { new PetDto { Name = "CCC" } } }
             };
 
             _ownerService.GetGendersForPetType(PetType.Cat).Returns(genders);

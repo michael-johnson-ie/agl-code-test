@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CatsApp.Model
+namespace CatsApp.Common
 {
     public enum PetType
     {

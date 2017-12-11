@@ -5,6 +5,7 @@ using CatsApp.Data;
 using CatsApp.Model;
 using CatsApp.Repository;
 using System.Linq;
+using CatsApp.Common;
 
 namespace CatsApp.UnitTests
 {
