@@ -46,6 +46,30 @@ namespace CatsApp.UnitTests
         }
 
         [TestMethod]
+        public void GetGendersWithPetType_ReturnsPetsInOrder()
+        {
+            Setup();
+
+            var _owners = new List<Owner>
+            {
+                new Owner { Name = "AAA", Age = 30, Gender = Gender.Male, Pets = new List<Pet> { new Pet { Name = "ZZZ", Type = PetType.Cat } } },
+                new Owner { Name = "BBB", Age = 40, Gender = Gender.Male, Pets = new List<Pet> { new Pet { Name = "AAA", Type = PetType.Cat } } },
+                new Owner { Name = "CCC", Age = 50, Gender = Gender.Male, Pets = new List<Pet> { new Pet { Name = "MMM", Type = PetType.Cat }, new Pet { Name = "QQQ", Type = PetType.Cat } } }
+            };
+
+            _ownerRepository.GetOwners().Returns(_owners);
+
+            var pets = _ownerService.GetGendersForPetType(PetType.Cat).First().Pets.ToList();
+
+            Assert.AreEqual(4, pets.Count());
+            Assert.AreEqual("AAA", pets[0].Name);
+            Assert.AreEqual("MMM", pets[1].Name);
+            Assert.AreEqual("QQQ", pets[2].Name);
+            Assert.AreEqual("ZZZ", pets[3].Name);
+            _ownerRepository.Received(1).GetOwners();
+        }
+
+        [TestMethod]
         public void GetGendersWithPetType_WithNoGendersHavingPetType_ReturnsNoGenders()
         {
             Setup();
